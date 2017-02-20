@@ -23,4 +23,3 @@ for container in client.containers.list(all=True):
 for image in client.images.list():
   print image.id
 
-# Remove all containers
