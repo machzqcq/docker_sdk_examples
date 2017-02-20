@@ -23,3 +23,14 @@ for container in client.containers.list(all=True):
 for image in client.images.list():
   print image.id
 
+# List networks
+for network in client.networks.list():
+    print("Network ID --> Name")
+    print(network.id, "-->", network.name)
+
+# List volumes
+
+for volume in client.volumes.list():
+    print("Volume ID --> Name")
+    print(volume.id,"-->", volume.name)
+
