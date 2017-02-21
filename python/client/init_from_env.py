@@ -1,8 +1,8 @@
 import docker, os
-import ConfigParser
+import configparser
 
 # Read Docker Daemon environment values
-config = ConfigParser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read('.env')
 
 # Set Environment variables. I created a docer-machine with name node1
@@ -12,16 +12,16 @@ os.environ['DOCKER_CERT_PATH'] = config.get('docker-machine-node1','DOCKER_CERT_
 client = docker.from_env()
 
 # Print output of running container
-print client.containers.run("alpine", ["echo", "hello", "world"])
+print(client.containers.run("alpine", ["echo", "hello", "world"]))
 
 # List all containers & remove
 for container in client.containers.list(all=True):
-  print container.name
+  print(container.name)
   container.remove()
 
 # List all images
 for image in client.images.list():
-  print image.id
+  print(image.id)
 
 # List networks
 for network in client.networks.list():

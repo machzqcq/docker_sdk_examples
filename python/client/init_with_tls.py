@@ -1,4 +1,4 @@
-import docker, os
+import docker
 
 
 tls_config = docker.tls.TLSConfig(ca_cert='/Users/pmacharl/.docker/machine/machines/node1/ca.pem',
@@ -10,14 +10,14 @@ client = docker.DockerClient(base_url='https://192.168.99.100:2376', tls=tls_con
 # It is not an error, just a warning - that needs to be fixed in production
 
 # Print output of running container
-print client.containers.run("alpine", ["echo", "hello", "world"])
+print(client.containers.run("alpine", ["echo", "hello", "world"]))
 
 # List all containers & remove
 for container in client.containers.list(all=True):
-  print container.name
+  print(container.name)
   container.remove()
 
 # List all images
 for image in client.images.list():
-  print image.id
+  print(image.id)
 
