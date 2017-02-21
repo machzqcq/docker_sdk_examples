@@ -3,7 +3,7 @@ import configparser
 
 # Read Docker Daemon environment values
 config = configparser.RawConfigParser()
-config.read('.env')
+config.read('../config/.env')
 
 # Set Environment variables. I created a docer-machine with name node1
 os.environ['DOCKER_HOST'] = config.get('docker-machine-node1','DOCKER_HOST')
