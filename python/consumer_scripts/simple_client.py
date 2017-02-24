@@ -4,7 +4,7 @@ import configparser
 conf = configparser.RawConfigParser()
 conf.read('../config/.env')
 
-myclient = MyDockerClient(conf).client
+myclient = MyDockerClient(conf,'docker-machine-node1').client
 print(myclient.containers.run("alpine", ["echo", "hello", "world"]))
 
 # List all containers & remove
