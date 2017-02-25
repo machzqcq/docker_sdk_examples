@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    docker-api (1.33.2)
+      excon (>= 0.38.0)
+      json
+    excon (0.55.0)
+    json (2.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  docker-api (= 1.33.2)
+
+BUNDLED WITH
+   1.13.7
